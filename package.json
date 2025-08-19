@@ -12,11 +12,11 @@
   ],
   "pricing": "Free",
   "version": "0.0.1",
-  "license": "https://github.com/LycanII/LzScripts/blob/bdf7741c1adda24a3ddcbf50fd786fefbfb9bc83/LICENSE",
+  "license": "https://github.com/LycanII/vsLzScripts/blob/e1cb145f1536a148c11a7d505500835ad00f394c/LICENSE",
   "icon": "images/default_icon.png",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LycanII/LzScripts.git"
+    "url": "https://github.com/LycanII/vsLzScripts.git"
   },
   "engines": {
     "vscode": "^1.97.0"
