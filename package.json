@@ -19,7 +19,7 @@
     "url": "https://github.com/LycanII/LzScripts.git"
   },
   "engines": {
-    "vscode": "^1.39.0"
+    "vscode": "^1.97.0"
   },
   "categories": ["Snippets", "Other"],
   "main": "./extension.js",
