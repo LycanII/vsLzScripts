@@ -1,0 +1,93 @@
+{
+  "name": "lz-scripts",
+  "displayName": "Lazy Scripts",
+  "description": "Generates scripts from the results of select query",
+  "publisher": "fsy-dev",
+  "keywords": [
+    "sql",
+    "mssql",
+    "scripts",
+    "insert",
+    "lazy"
+  ],
+  "pricing": "Free",
+  "version": "0.0.1",
+  "license": "https://github.com/LycanII/LzScripts/blob/bdf7741c1adda24a3ddcbf50fd786fefbfb9bc83/LICENSE",
+  "icon": "images/default_icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LycanII/LzScripts.git"
+  },
+  "engines": {
+    "vscode": "^1.39.0"
+  },
+  "categories": ["Snippets", "Other"],
+  "main": "./extension.js",
+  "activationEvents": [ "onLanguage:sql"],
+  "contributes": {
+    "configuration": {
+      "title": "LzScripts",
+      "properties": {
+        "LzScripts.addIdentityColumns": {
+          "type": "boolean",
+          "default": false,
+          "description": "Include Identity Columns in generated script"
+        },
+        "LzScripts.allowInsertPerRow": {
+          "type": "boolean",
+          "default": false,
+          "description": "Generate Insert for each data row found"
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "LzScripts.InsertToClip",
+        "title": "To Clipboard"
+      },
+      {
+        "command": "LzScripts.InsertToNewTab",
+        "title": "To New Tab"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "LzScripts.InsertFrom",
+          "when": "editorHasSelection && editorLangId == sql",
+          "group": "1data1"
+        }
+      ],
+      "LzScripts.InsertFrom": [
+        {
+          "command": "LzScripts.InsertToClip"
+        },
+        {
+          "command": "LzScripts.InsertToNewTab"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "LzScripts.InsertFrom",
+        "label": "Generate Insert from Results"
+      }
+    ]
+  },
+  "extensionDependencies": [
+    "ms-mssql.mssql"
+  ],  
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.97.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "eslint": "^9.19.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
