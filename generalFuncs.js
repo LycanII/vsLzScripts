@@ -176,7 +176,7 @@ async function getActiveConnectionId() {
 function getValue(displayValue, colinfo) {
     switch (colinfo.dataTypeName) {
         case "int": case "bigint": case "bit": case "binary": case "tinyint":
-            return parseInt(displayValue);
+            return BigInt(displayValue).toString();
         case "money": case "decimal": case "float": case "smallmoney": case "numeric":
             return parseFloat(displayValue);
         case "nvarchar":
